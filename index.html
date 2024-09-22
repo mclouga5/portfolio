@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Lobster|Comfortaa:700,400' rel='stylesheet' type='text/css'>
+  <title>Simple Games</title>
+</head>
+<body>
+    <section class="container" style="background-color: #de9f21;">
+            <h1 data-type="A personal portfolio" data-speed="50"></h1>
+            <h2 data-type="By Aoife McLoughlin" data-speed="50"></h2>
+    </section>
+
+
+    <section class="container" style="background-color: #996E89;">
+        <div style="display:flex; flex-direction: column; align-items: center;">
+          <h1> Player vs Computer <br>   Tic-Tac-Toe</h1>
+          <h2 class="message">Choose your player:</h2>
+          <form action="#">
+            <fieldset>
+              <input type="radio" name="player-choice" id="player-choice-1" value="X" />
+              <label for="player-choice-1">X</label>
+              <input type="radio" name="player-choice" id="player-choice-2" value="O" />
+              <label for="player-choice-2">O</label>
+            </fieldset>
+            <button id="reset-ttt-button" class="btn button-primary hidden">Reset</button>
+          </form>
+        </div>
+        <div class="row" id="grid-section">
+          <ul id="grid"></ul>
+    </section>
+
+    <section class="container mario-cover-image">
+        <div style="display:flex; flex-direction: column; align-items: center;">
+            <h1>Whack a Mole</h1>
+            <h2 id="wamMsg" class="message flourish"> Level 1</h2>
+            <button id="reset-wam-button" class="btn button-primary hidden">
+                Reset</button>
+            <h2 id="score"> Score: 0</h2>
+
+            <!-- 3x3 -->
+            <div id="board">
+            </div>
+
+    </section>
+
+<script src="app.js"></script>
+<script src="./whack_a_mole/index.js"></script>
+<script src="./tic_tac_toe/index.js"></script>
+</body>
+</html>

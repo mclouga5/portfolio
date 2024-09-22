@@ -1,0 +1,250 @@
+html {
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    font-family: "Comfortaa", sans-serif;
+  }
+
+  h1 {
+    font-family: "Lobster", serif;
+    text-align: center;
+    font-size: 5vh;
+  }
+
+  h2 {
+    font-family: 'Corben', Georgia, Times, serif;
+    color:black;
+    padding-top: 5%;
+    margin: 0;
+    font-size: 2vh;
+    }
+
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vh;
+    margin: 0;
+  }
+
+  .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.mario-cover-image {
+    text-align: center;
+    background: url("media/mario-bg.jpg");
+    background-size: cover;
+}
+
+  .message {
+    color: #fff;
+    font-size: 1.5em;
+    padding-bottom: 1em;
+  }
+
+  form {
+    label {
+      font-size: 4em;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+    input[type=radio] {
+      margin: 1em;
+      cursor: pointer;
+    }
+    fieldset {
+      display: block;
+      opacity: 1;
+      transition: all ease 1s;
+      border: none;
+    }
+    &.game-on fieldset {
+      opacity: 0;
+      display: none;
+    }
+    &.game-on button {
+      opacity: 1;
+      display: block;
+      margin: 0 auto;
+    }
+
+  }
+
+  #grid-section {
+    margin: 1vw 0;
+  }
+
+  #grid {
+    width: 65vw;
+    margin: 0 auto;
+  }
+
+  li {
+    border: 1px solid #000;
+    width: 20vw;
+    height: 20vh;
+    display: block;
+    float: left;
+    font-size: 3em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: .5em;
+  }
+
+  #c1, #c2, #c3 {
+    border-top: none;
+  }
+
+  #c3, #c6, #c9 {
+    border-right: none;
+  }
+
+  #c7, #c8, #c9 {
+    border-bottom: none;
+  }
+
+  #c1, #c4, #c7 {
+    border-left: none;
+  }
+
+  .winner {
+    color: #9AE1E5;
+  }
+
+  .button-primary,
+  .button-primary:focus {
+    background-color: #33B7A5;
+    opacity: 1;
+    outline: 0;
+    transition: all ease .3s;
+    border-radius: 20px
+  }
+
+  .button-primary.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .button-primary:hover {
+    background-color: #4C2F39;
+  }
+
+  @media (max-width: 620px){
+    .message {
+        color: #fff;
+        font-size: 1em;
+        padding-bottom: 1em;
+      }
+    #grid {
+        width: 60vw;
+        margin: 0 auto;
+      }
+      #grid-section {
+        margin: 5vw 0;
+      }
+    li {
+        width: 15vw;
+        height: 15vw;
+        font-size: 1em;
+      }
+  }
+
+/* Whack a Mole */
+
+#board {
+    width: 63vh;
+    height: 63vh;
+    /* background-color: green; */
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    background: url("media/soil.png");
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+}
+
+#board div {
+    width: 20vh;
+    height: 20vh;
+    margin:0;
+    background-image: url("media/pipe.png");
+    background-size: cover;
+}
+
+#board div img {
+    width: 100px;
+    height: 100px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+@media (max-width: 620px){
+    #board{
+        width: 100vw;
+      }
+      #board div {
+        width: 31vw;
+        height:31vw;
+      }
+      #board div img{
+        width: 4em;
+        height: 4em;
+      }
+  }
+
+#wamMsg {
+    color: #382121; /* Default color */
+}
+
+/* Effects*/
+
+[data-type]::after {
+    opacity: 0;
+    content: "|";
+    animation: blink 0.8s infinite;
+    animation-iteration-count: 3;
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+  @keyframes textFlourish {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .flourish {
+    animation: textFlourish 1s ease-in-out;
+  }
